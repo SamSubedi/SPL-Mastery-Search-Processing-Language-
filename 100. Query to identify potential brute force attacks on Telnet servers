@@ -1,0 +1,6 @@
+100. Query to identify potential brute force attacks on Telnet servers
+=====================================================================
+
+sourcetype=access_* method=POST uri_path="*/telnet"
+| stats count by src_ip
+| where count >= 10

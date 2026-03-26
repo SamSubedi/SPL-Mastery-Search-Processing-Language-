@@ -1,0 +1,5 @@
+107. Query to identify potential lateral movement attempts using DCOM failed connections
+=======================================================================================
+
+sourcetype=WinEventLog:Security EventCode=10009
+| search "DCOM was unable to communicate with the computer" AND NOT User="SYSTEM"

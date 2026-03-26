@@ -1,0 +1,6 @@
+103. Query to identify potential brute force attacks on SSH servers via URI
+==========================================================================
+
+sourcetype=access_* method=POST uri_path="*/ssh"
+| stats count by src_ip
+| where count >= 10

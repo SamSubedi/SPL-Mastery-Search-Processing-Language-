@@ -1,0 +1,5 @@
+89. Query to identify potential data exfiltration attempts over FTP
+===================================================================
+
+sourcetype=access_* action=file_upload
+| search uri_path="*/ftp" OR uri_path="*/sftp"

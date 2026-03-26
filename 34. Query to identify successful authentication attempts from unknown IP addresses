@@ -1,0 +1,6 @@
+34. Query to identify successful authentication attempts from unknown IP addresses
+==================================================================================
+
+sourcetype=access_* action=login
+| stats count by src_ip
+| where count >= 5 AND NOT src_ip IN (192.168.0.0/16, 10.0.0.0/8)

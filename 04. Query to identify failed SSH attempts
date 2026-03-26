@@ -1,0 +1,6 @@
+04. Query to identify failed SSH attempts
+=========================================
+
+sourcetype=linux_secure "Failed password for"
+| stats count by src_ip
+| sort -count

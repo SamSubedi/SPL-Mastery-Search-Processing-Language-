@@ -1,0 +1,6 @@
+39. Query to identify potential man-in-the-middle attacks
+=========================================================
+
+sourcetype=network_traffic protocol=tcp
+| stats count by dest_ip
+| where count > 100

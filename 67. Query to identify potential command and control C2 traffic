@@ -1,0 +1,6 @@
+67. Query to identify potential command and control C2 traffic
+==============================================================
+
+sourcetype=network_traffic
+| stats count by dest_ip
+| where count > 500 AND NOT dest_ip IN (192.168.0.0/16, 10.0.0.0/8)

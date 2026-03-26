@@ -1,0 +1,6 @@
+70. Query to identify potential malicious traffic from a specific IP address
+============================================================================
+
+sourcetype=network_traffic src_ip=10.1.1.1
+| stats count by dest_ip
+| where count > 10

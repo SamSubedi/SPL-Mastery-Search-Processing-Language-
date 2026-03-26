@@ -1,0 +1,4 @@
+23. Query to identify traffic to known malicious IP addresses
+=============================================================
+
+sourcetype=network_traffic dest_ip=malicious_ip

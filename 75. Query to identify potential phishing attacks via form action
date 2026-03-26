@@ -1,0 +1,5 @@
+75. Query to identify potential phishing attacks via form action
+================================================================
+
+sourcetype=access_* method=POST uri_path="*.php"
+| search form_action="http://www.evilsite.com/login.php" AND (input_password=* OR input_password=*)

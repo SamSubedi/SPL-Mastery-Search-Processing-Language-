@@ -1,0 +1,6 @@
+80. Query to identify potential beaconing activity from a compromised host
+==========================================================================
+
+sourcetype=network_traffic src_ip=10.1.1.1
+| stats count by dest_port
+| where count > 1000

@@ -1,0 +1,6 @@
+09. Query to identify privilege escalation attempts on Windows systems
+======================================================================
+
+sourcetype="WinEventLog:Security" EventCode=4672
+| eval user_account=mvindex(Account_Name,1)
+| search "Security ID" NOT IN ("SYSTEM","LOCAL SERVICE","NETWORK SERVICE")

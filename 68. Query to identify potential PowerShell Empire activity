@@ -1,0 +1,5 @@
+68. Query to identify potential PowerShell Empire activity
+==========================================================
+
+sourcetype=WinEventLog:Windows PowerShell
+| search (powershell.exe -nop -w hidden -ep bypass -c)|(iex(new-object net.webclient).downloadstring)

@@ -1,0 +1,5 @@
+102. Query to identify potential lateral movement attempts using WMI failed connections
+======================================================================================
+
+sourcetype=WinEventLog:Security EventCode=5605
+| search Object_Name="*\\ROOT\\CIMV2" AND NOT User="SYSTEM"

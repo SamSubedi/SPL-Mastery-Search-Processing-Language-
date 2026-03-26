@@ -1,0 +1,6 @@
+35. Query to identify potential brute force attacks on a specific service
+=========================================================================
+
+sourcetype=network_traffic service=ssh
+| stats count by src_ip
+| where count >= 10

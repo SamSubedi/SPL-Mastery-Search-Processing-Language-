@@ -1,0 +1,6 @@
+97. Query to identify potential brute force attacks on MSSQL servers failed logins
+==================================================================================
+
+sourcetype=mssql_access action=failed
+| stats count by src_ip
+| where count >= 10

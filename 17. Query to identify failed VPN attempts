@@ -1,0 +1,4 @@
+17. Query to identify failed VPN attempts
+=========================================
+
+sourcetype=access_* VPN AND action="failure"

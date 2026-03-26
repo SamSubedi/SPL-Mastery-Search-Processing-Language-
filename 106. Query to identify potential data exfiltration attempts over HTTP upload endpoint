@@ -1,0 +1,6 @@
+106. Query to identify potential data exfiltration attempts over HTTP upload endpoint
+====================================================================================
+
+sourcetype=access_* method=POST uri_path="/upload"
+| stats count by src_ip
+| where count >= 10

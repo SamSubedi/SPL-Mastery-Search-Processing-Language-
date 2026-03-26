@@ -1,0 +1,6 @@
+65. Query to identify potential DNS tunneling activity via response flags
+=========================================================================
+
+sourcetype=dns
+| rex field=_raw "\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}#(?<query>.+)\s+type: (?<type>.+)\s+class: (?<class>.+)\s+flags: (?<flags>.+)"
+| search type="A" AND class="IN" AND flags="rd"

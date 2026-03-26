@@ -1,0 +1,6 @@
+27. Query to identify unusual DNS requests
+==========================================
+
+sourcetype=dns
+| stats count by query
+| where count > 10

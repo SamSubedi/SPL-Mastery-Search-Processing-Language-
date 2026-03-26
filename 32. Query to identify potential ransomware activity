@@ -1,0 +1,6 @@
+32. Query to identify potential ransomware activity
+===================================================
+
+sourcetype=access_* action=file_delete
+| rex field=file_path ".*\.(?<extension>[^\.]+)"
+| search extension="encrypted" OR extension="locked" OR extension="ransom"

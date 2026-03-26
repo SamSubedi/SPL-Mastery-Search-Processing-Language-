@@ -1,0 +1,6 @@
+110. Query to identify potential data exfiltration attempts over HTTPS
+=====================================================================
+
+sourcetype=ssl method=POST
+| stats count by src_ip, dest_ip
+| where count >= 10

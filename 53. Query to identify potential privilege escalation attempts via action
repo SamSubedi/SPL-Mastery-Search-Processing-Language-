@@ -1,0 +1,6 @@
+53. Query to identify potential privilege escalation attempts via action
+========================================================================
+
+sourcetype=access_* action=privilege_escalation
+| stats count by user
+| where count > 5

@@ -1,0 +1,6 @@
+06. Query to identify unusual network traffic
+=============================================
+
+sourcetype=network_traffic
+| stats sum(bytes) as total_bytes by src_ip, dest_ip
+| where total_bytes > 1000000

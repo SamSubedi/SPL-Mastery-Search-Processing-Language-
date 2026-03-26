@@ -1,0 +1,5 @@
+62. Query to identify potential web shell activity
+==================================================
+
+sourcetype=access_* action=command_execution
+| search (echo|print|printf)\s+(base64_decode|eval|gzinflate|str_rot13)

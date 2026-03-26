@@ -1,0 +1,5 @@
+83. Query to identify potential lateral movement attempts using WMI
+===================================================================
+
+sourcetype=WinEventLog:Security EventCode=5861
+| search (Operation="ExecQuery" AND QueryLanguage="WQL") OR (Operation="MethodCall" AND NOT MethodName="GetSecurityDescriptor" AND NOT MethodName="SetSecurityDescriptor")

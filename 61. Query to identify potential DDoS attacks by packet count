@@ -1,0 +1,6 @@
+61. Query to identify potential DDoS attacks by packet count
+============================================================
+
+sourcetype=network_traffic
+| stats count by src_ip
+| where count > 1000

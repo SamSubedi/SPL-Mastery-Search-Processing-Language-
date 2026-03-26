@@ -1,0 +1,5 @@
+03. Query to identify privilege escalation attempts
+===================================================
+
+sourcetype=linux_secure su*
+| where user!=root AND user!=""

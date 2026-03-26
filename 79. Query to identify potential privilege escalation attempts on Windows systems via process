@@ -1,0 +1,5 @@
+79. Query to identify potential privilege escalation attempts on Windows systems via process
+============================================================================================
+
+sourcetype=WinEventLog:Security EventCode=4688
+| search (New_Process_Name="*\\runas.exe" OR New_Process_Name="*\\psexec.exe") AND NOT User="SYSTEM"

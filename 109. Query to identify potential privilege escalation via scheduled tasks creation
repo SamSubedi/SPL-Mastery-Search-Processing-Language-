@@ -1,0 +1,5 @@
+109. Query to identify potential privilege escalation via scheduled tasks creation
+=================================================================================
+
+sourcetype=WinEventLog:Security EventCode=4698
+| search "Task Scheduler service found a misconfiguration" AND NOT User="SYSTEM"

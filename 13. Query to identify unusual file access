@@ -1,0 +1,6 @@
+13. Query to identify unusual file access
+=========================================
+
+sourcetype=access_* action=file_delete OR action=file_rename
+| stats count by user
+| where count > 10

@@ -1,0 +1,5 @@
+99. Query to identify potential lateral movement attempts using NetBIOS
+=======================================================================
+
+sourcetype=WinEventLog:Security EventCode=5719
+| search "No Domain Controller is available" OR "This computer was not able to set up a secure session with a domain controller"

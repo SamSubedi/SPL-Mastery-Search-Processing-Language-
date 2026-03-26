@@ -1,0 +1,6 @@
+08. Query to identify brute force attacks
+=========================================
+
+sourcetype=access_*
+| stats count by clientip, action
+| where action="failure" AND count>=5

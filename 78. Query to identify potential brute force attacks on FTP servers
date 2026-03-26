@@ -1,0 +1,6 @@
+78. Query to identify potential brute force attacks on FTP servers
+==================================================================
+
+sourcetype=access_* method=POST uri_path="*/wp-login.php"
+| stats count by src_ip
+| where count >= 20

@@ -1,0 +1,7 @@
+54. Query to identify potential web application attacks
+=======================================================
+
+sourcetype=access_* method=POST uri_path="*.php"
+| rex field=_raw "(?<attack>sql_injection|xss|csrf)"
+| stats count by attack
+| where count > 5

@@ -1,0 +1,6 @@
+30. Query to identify unusual user activity
+===========================================
+
+sourcetype=access_* action=purchase
+| stats count by user
+| where count > 100

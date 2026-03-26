@@ -1,0 +1,6 @@
+92. Query to identify potential brute force attacks on web applications high volume
+===================================================================================
+
+sourcetype=access_* method=POST
+| stats count by src_ip, uri_path
+| where count >= 100

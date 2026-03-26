@@ -1,0 +1,6 @@
+12. Query to identify suspicious PowerShell activity
+====================================================
+
+sourcetype="WinEventLog:Microsoft-Windows-PowerShell/Operational" EventCode=4103
+| eval script_block=mvindex(Message,3)
+| search script_block="*Start-Process*"

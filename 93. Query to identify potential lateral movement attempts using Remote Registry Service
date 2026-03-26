@@ -1,0 +1,5 @@
+93. Query to identify potential lateral movement attempts using Remote Registry Service
+=======================================================================================
+
+sourcetype=WinEventLog:Security EventCode=4663
+| search Object_Name="*\\REGISTRY\\MACHINE\\SOFTWARE" AND NOT User="SYSTEM" AND NOT User="NETWORK SERVICE" AND NOT User="LOCAL SERVICE"

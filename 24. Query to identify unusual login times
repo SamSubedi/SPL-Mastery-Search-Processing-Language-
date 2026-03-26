@@ -1,0 +1,7 @@
+24. Query to identify unusual login times
+=========================================
+
+sourcetype=access_* action=login
+| eval hour=strftime(_time,"%H")
+| stats count by user, hour
+| where count < 3

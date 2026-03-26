@@ -1,0 +1,6 @@
+40. Query to identify potential data exfiltration via file upload
+=================================================================
+
+sourcetype=access_* action=file_upload
+| stats count by user, file_path
+| where count > 10

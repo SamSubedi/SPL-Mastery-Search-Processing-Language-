@@ -1,0 +1,6 @@
+48. Query to identify potential brute force attacks on a specific application
+=============================================================================
+
+sourcetype=access_* uri_path="/app/login" AND action=failure
+| stats count by src_ip
+| where count >= 5

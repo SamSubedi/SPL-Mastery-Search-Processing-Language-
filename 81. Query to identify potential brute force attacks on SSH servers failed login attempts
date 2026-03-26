@@ -1,0 +1,6 @@
+81. Query to identify potential brute force attacks on SSH servers failed login attempts
+========================================================================================
+
+sourcetype=linux_secure action=failed
+| stats count by src_ip
+| where count >= 10

@@ -1,0 +1,5 @@
+69. Query to identify potential ransomware activity via file extensions
+=======================================================================
+
+sourcetype=access_* action=file_write
+| search file_path="*.crypt" OR file_path="*.locky"

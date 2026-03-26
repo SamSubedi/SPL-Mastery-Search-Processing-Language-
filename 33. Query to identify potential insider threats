@@ -1,0 +1,6 @@
+33. Query to identify potential insider threats
+===============================================
+
+sourcetype=access_* action=file_upload
+| stats count by user, file_path
+| where count > 10

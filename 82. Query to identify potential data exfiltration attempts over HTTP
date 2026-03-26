@@ -1,0 +1,5 @@
+82. Query to identify potential data exfiltration attempts over HTTP
+====================================================================
+
+sourcetype=access_* action=file_download
+| search uri_path="*.zip" OR uri_path="*.rar" OR uri_path="*.tgz" OR uri_path="*.tar.gz"

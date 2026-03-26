@@ -1,0 +1,6 @@
+57. Query to identify potential port scanning activity
+======================================================
+
+sourcetype=network_traffic protocol=tcp
+| stats count by src_ip, dest_port
+| where count > 20 AND NOT dest_port IN (22, 3389, 1433, 3306, 8080)

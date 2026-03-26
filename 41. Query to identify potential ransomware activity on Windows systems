@@ -1,0 +1,7 @@
+41. Query to identify potential ransomware activity on Windows systems
+======================================================================
+
+sourcetype=WinEventLog:Security EventCode=4663
+| rex field=Object_Name "\\\\.*\\\\(?<filename>.+)"
+| rex field=filename ".*\.(?<extension>[^\.]+)"
+| search extension="encrypted" OR extension="locked" OR extension="ransom"

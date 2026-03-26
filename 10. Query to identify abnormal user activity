@@ -1,0 +1,6 @@
+10. Query to identify abnormal user activity
+============================================
+
+sourcetype=access_* action=purchase
+| stats count by clientip, user
+| where count > 50

@@ -1,0 +1,6 @@
+19. Query to identify successful login attempts from new or unknown IP addresses
+================================================================================
+
+sourcetype=access_* action=login
+| stats count by user, src_ip
+| where count=1

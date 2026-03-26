@@ -1,0 +1,6 @@
+64. Query to identify potential privilege escalation attempts on Linux systems via sudo
+=======================================================================================
+
+sourcetype=access_* action="sudo command"
+| stats count by user
+| where count >= 10

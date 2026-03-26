@@ -1,0 +1,6 @@
+101. Query to identify potential data exfiltration attempts over FTP putfile
+===========================================================================
+
+sourcetype=ftp action=putfile
+| stats count by src_ip
+| where count >= 10

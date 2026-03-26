@@ -1,0 +1,5 @@
+56. Query to identify potential unauthorized changes to critical files
+======================================================================
+
+sourcetype=access_* action=file_write
+| search file_path="*/etc/*" OR file_path="*/var/*"

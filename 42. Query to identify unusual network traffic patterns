@@ -1,0 +1,6 @@
+42. Query to identify unusual network traffic patterns
+======================================================
+
+sourcetype=network_traffic
+| stats count by dest_ip, dest_port
+| where count > 100 AND NOT dest_ip="192.168.0.1"

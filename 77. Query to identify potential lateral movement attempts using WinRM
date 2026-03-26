@@ -1,0 +1,5 @@
+77. Query to identify potential lateral movement attempts using WinRM
+=====================================================================
+
+sourcetype=WinEventLog:Microsoft-Windows-WinRM/Operational EventCode=146
+| search "winrs: client" AND "is starting a command" AND NOT user="NETWORK SERVICE" AND NOT user="LocalSystem"

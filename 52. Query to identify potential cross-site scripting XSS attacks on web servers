@@ -1,0 +1,6 @@
+52. Query to identify potential cross-site scripting XSS attacks on web servers
+===============================================================================
+
+sourcetype=access_* method=POST uri_path="*.php"
+| rex field=_raw "document\.write\('(?<payload>[^']+)'\)"
+| search payload="<script>"

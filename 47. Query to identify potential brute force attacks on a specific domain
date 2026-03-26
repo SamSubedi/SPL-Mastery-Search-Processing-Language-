@@ -1,0 +1,6 @@
+47. Query to identify potential brute force attacks on a specific domain
+========================================================================
+
+sourcetype=access_* host=example.com AND action=failure
+| stats count by src_ip
+| where count >= 10

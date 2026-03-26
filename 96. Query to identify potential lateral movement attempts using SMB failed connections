@@ -1,0 +1,5 @@
+96. Query to identify potential lateral movement attempts using SMB failed connections
+======================================================================================
+
+sourcetype=WinEventLog:Security EventCode=5152
+| search Object_Name="*\\ADMIN$" OR Object_Name="*\\C$" AND Status="0xC000006D"

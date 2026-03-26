@@ -1,0 +1,6 @@
+05. Query to identify successful SSH attempts
+=============================================
+
+sourcetype=linux_secure "Accepted publickey for"
+| stats count by src_ip
+| sort -count

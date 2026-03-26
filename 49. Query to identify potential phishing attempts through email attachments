@@ -1,0 +1,5 @@
+49. Query to identify potential phishing attempts through email attachments
+===========================================================================
+
+sourcetype=email
+| search attachment="*.exe" OR attachment="*.zip"

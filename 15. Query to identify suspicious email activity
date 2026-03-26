@@ -1,0 +1,5 @@
+15. Query to identify suspicious email activity
+===============================================
+
+sourcetype=email
+| search "phishing" OR "malware" OR "suspicious link"

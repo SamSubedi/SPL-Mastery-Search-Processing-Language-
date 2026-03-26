@@ -1,0 +1,5 @@
+104. Query to identify potential privilege escalation via services configuration changes
+=======================================================================================
+
+sourcetype=WinEventLog:Security EventCode=4697 OR EventCode=7045
+| search Image_Path="*\\System32\\*" AND NOT User="SYSTEM"

@@ -1,0 +1,5 @@
+28. Query to identify potential spear-phishing attempts
+=======================================================
+
+sourcetype=email
+| search "CEO" OR "CFO" OR "Finance" OR "Accounting" OR "Payment"

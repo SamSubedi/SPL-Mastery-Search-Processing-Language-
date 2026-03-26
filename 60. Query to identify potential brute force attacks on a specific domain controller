@@ -1,0 +1,6 @@
+60. Query to identify potential brute force attacks on a specific domain controller
+===================================================================================
+
+sourcetype=WinEventLog:Security EventCode=4625 domain_controller="DC01"
+| stats count by src_ip
+| where count >= 5

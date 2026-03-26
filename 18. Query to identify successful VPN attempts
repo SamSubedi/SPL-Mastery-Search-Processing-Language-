@@ -1,0 +1,4 @@
+18. Query to identify successful VPN attempts
+=============================================
+
+sourcetype=access_* VPN AND action="success"

@@ -1,0 +1,5 @@
+95. Query to identify potential data exfiltration attempts over DNS
+===================================================================
+
+sourcetype=dns
+| search query_type=A AND query !="*.google.com" AND query !="*.facebook.com" AND query !="*.twitter.com" AND query !="*.microsoft.com"

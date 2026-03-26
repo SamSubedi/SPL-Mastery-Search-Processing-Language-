@@ -1,0 +1,6 @@
+63. Query to identify potential brute force attacks on a specific network device
+================================================================================
+
+sourcetype=cisco:asa
+| stats count by src_ip
+| where count >= 10

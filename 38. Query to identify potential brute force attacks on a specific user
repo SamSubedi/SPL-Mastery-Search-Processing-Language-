@@ -1,0 +1,6 @@
+38. Query to identify potential brute force attacks on a specific user
+======================================================================
+
+sourcetype=access_* user=username AND action=failure
+| stats count by src_ip
+| where count >= 5

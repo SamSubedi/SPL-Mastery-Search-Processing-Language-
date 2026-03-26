@@ -1,0 +1,6 @@
+45. Query to identify potential DNS tunneling activity via query count
+======================================================================
+
+sourcetype=dns
+| stats count by query
+| where count > 5 AND NOT match(query, "\.")

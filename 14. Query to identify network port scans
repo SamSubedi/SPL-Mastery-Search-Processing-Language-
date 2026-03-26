@@ -1,0 +1,6 @@
+14. Query to identify network port scans
+========================================
+
+sourcetype=network_traffic
+| stats count by src_ip, dest_port
+| where count > 100

@@ -1,0 +1,6 @@
+71. Query to identify potential brute force attacks on web applications via POST
+================================================================================
+
+sourcetype=access_* method=POST uri_path="*.php"
+| stats count by src_ip
+| where count >= 50

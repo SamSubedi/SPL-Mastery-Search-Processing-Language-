@@ -1,0 +1,6 @@
+76. Query to identify potential command injection attempts on web servers
+=========================================================================
+
+sourcetype=access_* method=POST uri_path="*.php"
+| rex field=_raw "(?<command>cat|ls|dir)\s+(?<argument>[^;]+)"
+| where isnotnull(command) AND isnotnull(argument)

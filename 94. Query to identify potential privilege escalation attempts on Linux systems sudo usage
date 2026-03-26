@@ -1,0 +1,4 @@
+94. Query to identify potential privilege escalation attempts on Linux systems sudo usage
+=========================================================================================
+
+sourcetype=linux_secure "sudo:"

@@ -1,0 +1,6 @@
+43. Query to identify potential brute force attacks on a specific protocol
+==========================================================================
+
+sourcetype=network_traffic protocol=http
+| stats count by src_ip
+| where count >= 50

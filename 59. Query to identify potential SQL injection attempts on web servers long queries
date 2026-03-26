@@ -1,0 +1,7 @@
+59. Query to identify potential SQL injection attempts on web servers long queries
+==================================================================================
+
+sourcetype=access_* method=POST uri_path="*.php"
+| rex field=_raw "SELECT\s+(?<query>[^;]+)"
+| eval query_length=length(query)
+| where query_length > 100 AND query_length < 200

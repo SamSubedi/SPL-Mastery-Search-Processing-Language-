@@ -1,0 +1,6 @@
+86. Query to identify potential brute force attacks on email accounts
+=====================================================================
+
+sourcetype=exchangeps
+| stats count by src_ip
+| where count >= 10

@@ -1,0 +1,5 @@
+66. Query to identify potential lateral movement attempts using RDP
+===================================================================
+
+sourcetype=WinEventLog:Security EventCode=4624 OR EventCode=4625
+| search Logon_Type=10

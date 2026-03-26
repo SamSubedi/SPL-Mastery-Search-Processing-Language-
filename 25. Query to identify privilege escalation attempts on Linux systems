@@ -1,0 +1,5 @@
+25. Query to identify privilege escalation attempts on Linux systems
+====================================================================
+
+sourcetype=linux_secure "sudo:"
+| where user!="root" AND user!=""

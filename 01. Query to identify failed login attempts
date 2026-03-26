@@ -1,0 +1,6 @@
+01. Query to identify failed login attempts
+===========================================
+
+sourcetype=auth* "authentication failure"
+| stats count by user
+| sort -count

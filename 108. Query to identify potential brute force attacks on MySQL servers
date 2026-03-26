@@ -1,0 +1,6 @@
+108. Query to identify potential brute force attacks on MySQL servers
+====================================================================
+
+sourcetype=mysql_access action=failed
+| stats count by src_ip
+| where count >= 10

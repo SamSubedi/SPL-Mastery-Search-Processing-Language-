@@ -1,0 +1,5 @@
+98. Query to identify potential data exfiltration attempts over SMTP
+====================================================================
+
+sourcetype=smtp action=send_message
+| search recipient!="*@gmail.com" AND recipient!="*@yahoo.com" AND recipient!="*@hotmail.com" AND recipient!="*@aol.com"

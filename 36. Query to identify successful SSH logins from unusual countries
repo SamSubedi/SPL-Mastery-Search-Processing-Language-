@@ -1,0 +1,7 @@
+36. Query to identify successful SSH logins from unusual countries
+==================================================================
+
+sourcetype=access_* action=login service=ssh
+| iplocation src_ip
+| stats count by src_country
+| where count > 10 AND NOT src_country="United States"

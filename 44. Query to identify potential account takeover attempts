@@ -1,0 +1,6 @@
+44. Query to identify potential account takeover attempts
+=========================================================
+
+sourcetype=access_* action=login
+| stats count by user
+| where count > 10

@@ -1,0 +1,5 @@
+90. Query to identify potential lateral movement attempts using SMB successful connections
+==========================================================================================
+
+sourcetype=WinEventLog:Security EventCode=5140
+| search Object_Name="*\\ADMIN$" OR Object_Name="*\\C$"

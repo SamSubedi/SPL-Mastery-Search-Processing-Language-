@@ -1,0 +1,5 @@
+72. Query to identify potential unauthorized access attempts to sensitive files
+===============================================================================
+
+sourcetype=access_* action=file_read
+| search file_path="*/etc/shadow" OR file_path="*/etc/passwd"

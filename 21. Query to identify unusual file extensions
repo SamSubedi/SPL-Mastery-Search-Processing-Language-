@@ -1,0 +1,7 @@
+21. Query to identify unusual file extensions
+=============================================
+
+sourcetype=access_* action=file_upload
+| rex field=file_path ".*\.(?<extension>[^\.]+)"
+| stats count by extension
+| where count > 10

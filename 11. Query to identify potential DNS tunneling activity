@@ -1,0 +1,7 @@
+11. Query to identify potential DNS tunneling activity
+======================================================
+
+sourcetype=dns
+| rex field=answer "data\"\s*:\s*\"(?<data>[^\"]+)\""
+| eval data_length=len(data)
+| where data_length > 32 AND (data_length % 4) == 0

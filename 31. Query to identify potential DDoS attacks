@@ -1,0 +1,6 @@
+31. Query to identify potential DDoS attacks
+============================================
+
+sourcetype=network_traffic
+| stats sum(bytes) as total_bytes by src_ip
+| where total_bytes > 100000000

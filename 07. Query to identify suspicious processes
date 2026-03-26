@@ -1,0 +1,7 @@
+07. Query to identify suspicious processes
+==========================================
+
+sourcetype=processes
+| search "lsass.exe" OR "svchost.exe" OR "explorer.exe"
+| stats count by user
+| sort -count

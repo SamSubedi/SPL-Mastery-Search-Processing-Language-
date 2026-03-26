@@ -1,0 +1,6 @@
+51. Query to identify potential reconnaissance activity
+=======================================================
+
+sourcetype=access_* method=GET
+| stats count by uri_path
+| where count > 100

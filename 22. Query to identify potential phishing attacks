@@ -1,0 +1,5 @@
+22. Query to identify potential phishing attacks
+================================================
+
+sourcetype=email
+| search "password" OR "reset" OR "verify" OR "login"

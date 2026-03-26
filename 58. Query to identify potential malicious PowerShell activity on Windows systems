@@ -1,0 +1,5 @@
+58. Query to identify potential malicious PowerShell activity on Windows systems
+================================================================================
+
+sourcetype=WinEventLog:Windows PowerShell EventCode=4104
+| search (New-Object System.Net.WebClient).DownloadString OR (Invoke-WebRequest -Uri)
